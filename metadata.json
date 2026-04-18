@@ -1,0 +1,9 @@
+{
+  "name": "Zawiyah",
+  "description": "A plain HTML/CSS/JS version of the Zawiyah SaaS Dashboard, optimized for GitHub Pages.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zawiyah - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Zawiyah</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active" data-section="dashboard">
+                        <i data-lucide="home"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li data-section="zawiyahs">
+                        <i data-lucide="building-2"></i>
+                        <span>Zawiyahs</span>
+                    </li>
+                    <li data-section="staff">
+                        <i data-lucide="users"></i>
+                        <span>Staff</span>
+                    </li>
+                    <li data-section="students">
+                        <i data-lucide="graduation-cap"></i>
+                        <span>Students</span>
+                    </li>
+                    <li data-section="finance">
+                        <i data-lucide="wallet"></i>
+                        <span>Finance</span>
+                    </li>
+                    <li data-section="donations">
+                        <i data-lucide="hand-coins"></i>
+                        <span>Donations</span>
+                    </li>
+                    <li data-section="attendance">
+                        <i data-lucide="calendar-check"></i>
+                        <span>Attendance</span>
+                    </li>
+                    <li data-section="complaints">
+                        <i data-lucide="message-square-warning"></i>
+                        <span>Complaints</span>
+                    </li>
+                    <li data-section="settings">
+                        <i data-lucide="settings"></i>
+                        <span>Settings</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logout-btn">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <button id="menu-toggle" class="mobile-only">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h1 id="section-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i data-lucide="bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="avatar">Z</div>
+                        <div class="user-info desktop-only">
+                            <span class="user-name">Zawiyah</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area" id="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon income">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Total Income</h3>
+                                <p class="stat-value">$45,200</p>
+                                <span class="stat-trend positive">+12% from last month</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon expense">
+                                <i data-lucide="trending-down"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Total Expense</h3>
+                                <p class="stat-value">$12,800</p>
+                                <span class="stat-trend negative">+5% from last month</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon users">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Total Students</h3>
+                                <p class="stat-value">1,240</p>
+                                <span class="stat-trend positive">+45 new this week</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon donations">
+                                <i data-lucide="heart"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Donations</h3>
+                                <p class="stat-value">$8,500</p>
+                                <span class="stat-trend positive">+20% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="card chart-card">
+                            <div class="card-header">
+                                <h2>Income vs Expense</h2>
+                                <select>
+                                    <option>Last 6 Months</option>
+                                    <option>Last Year</option>
+                                </select>
+                            </div>
+                            <div class="chart-container">
+                                <div class="simple-bar-chart">
+                                    <div class="bar-group">
+                                        <div class="bar income" style="height: 60%;"></div>
+                                        <div class="bar expense" style="height: 40%;"></div>
+                                        <span>Jan</span>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar income" style="height: 75%;"></div>
+                                        <div class="bar expense" style="height: 35%;"></div>
+                                        <span>Feb</span>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar income" style="height: 65%;"></div>
+                                        <div class="bar expense" style="height: 45%;"></div>
+                                        <span>Mar</span>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar income" style="height: 90%;"></div>
+                                        <div class="bar expense" style="height: 30%;"></div>
+                                        <span>Apr</span>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar income" style="height: 80%;"></div>
+                                        <div class="bar expense" style="height: 50%;"></div>
+                                        <span>May</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card activity-card">
+                            <div class="card-header">
+                                <h2>Recent Activity</h2>
+                                <a href="#" class="view-all">View All</a>
+                            </div>
+                            <ul class="activity-list">
+                                <li>
+                                    <div class="activity-icon donation">
+                                        <i data-lucide="dollar-sign"></i>
+                                    </div>
+                                    <div class="activity-info">
+                                        <p><strong>New Donation</strong> received from John Doe</p>
+                                        <span>2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="activity-icon student">
+                                        <i data-lucide="user-plus"></i>
+                                    </div>
+                                    <div class="activity-info">
+                                        <p><strong>New Student</strong> enrolled in Class 10A</p>
+                                        <span>5 hours ago</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="activity-icon complaint">
+                                        <i data-lucide="alert-circle"></i>
+                                    </div>
+                                    <div class="activity-info">
+                                        <p><strong>Complaint Resolved</strong> regarding library AC</p>
+                                        <span>Yesterday</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Placeholder Sections -->
+                <section id="zawiyahs-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Zawiyah Management</h2>
+                            <button class="btn-primary">Add New Zawiyah</button>
+                        </div>
+                        <p>Manage all educational and religious institutions here.</p>
+                    </div>
+                </section>
+
+                <section id="staff-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Staff Management</h2>
+                            <button class="btn-primary">Add New Staff</button>
+                        </div>
+                        <p>Manage your Zawiyah's team members and their roles.</p>
+                    </div>
+                </section>
+
+                <section id="students-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Student Management</h2>
+                            <button class="btn-primary">Add New Student</button>
+                        </div>
+                        <p>Manage your Zawiyah's students and their classes.</p>
+                    </div>
+                </section>
+
+                <section id="finance-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Finance System</h2>
+                            <button class="btn-primary">Add Transaction</button>
+                        </div>
+                        <p>Track income, expenses, and financial health.</p>
+                    </div>
+                </section>
+
+                <section id="donations-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Donation System</h2>
+                            <button class="btn-primary">New Donation</button>
+                        </div>
+                        <p>Track contributions and support your Zawiyah.</p>
+                    </div>
+                </section>
+
+                <section id="attendance-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Attendance System</h2>
+                            <button class="btn-primary">Mark Attendance</button>
+                        </div>
+                        <p>Monitor daily presence of staff and students.</p>
+                    </div>
+                </section>
+
+                <section id="complaints-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Complaints & Feedback</h2>
+                        </div>
+                        <p>Submit your issues or resolve pending complaints.</p>
+                    </div>
+                </section>
+
+                <section id="settings-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Settings</h2>
+                        </div>
+                        <p>Manage your personal information and account settings.</p>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="site-footer">
+                <!-- Newsletter Section -->
+                <div class="newsletter-bar">
+                    <div class="footer-container">
+                        <div class="newsletter-content">
+                            <div class="newsletter-text">
+                                <h2>Join our Newsletter</h2>
+                                <p>Stay updated with the latest from Zawiyah.</p>
+                            </div>
+                            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                                <input type="email" placeholder="Enter your email" required>
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Footer -->
+                <div class="footer-container">
+                    <div class="main-footer">
+                        <div class="footer-col about">
+                            <h3>About Zawiyah</h3>
+                            <p>Dedicated to the <span class="accent-text">Fruits of Knowledge</span> and spiritual growth. We provide a modern platform for managing educational and religious institutions with ease and transparency.</p>
+                        </div>
+                        <div class="footer-col contact">
+                            <h3>Contact Us</h3>
+                            <ul class="contact-info">
+                                <li><i data-lucide="mail"></i> your@email.com</li>
+                                <li><i data-lucide="phone"></i> 03007770975</li>
+                                <li><i data-lucide="map-pin"></i> 123 Knowledge Way, City, Country</li>
+                            </ul>
+                        </div>
+                        <div class="footer-col links">
+                            <h3>Useful Links</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Support Center</a></li>
+                                <li><a href="#">Documentation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Social Section -->
+                    <div class="social-section">
+                        <div class="social-icons">
+                            <a href="https://facebook.com" target="_blank" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://instagram.com" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <p class="copyright">© 2026 Zawiyah. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
